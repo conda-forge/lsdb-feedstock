@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: b636c652762c684c4576a3a64b7cae8a34a6cfad769a9c0a475f42ff2d546f33
+  sha256: 26a18ba41d3e381bfba6f6802ff829acbd983f235e8dbff58870272380ee1551
 
 build:
   noarch: python
