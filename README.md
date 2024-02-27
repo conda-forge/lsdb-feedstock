@@ -143,5 +143,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@delucchi-cmu](https://github.com/delucchi-cmu/)
+* [@drewoldag](https://github.com/drewoldag/)
+* [@jeremykubica](https://github.com/jeremykubica/)
 * [@mjuric](https://github.com/mjuric/)
 
