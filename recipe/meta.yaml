@@ -22,12 +22,11 @@ requirements:
     - pip
   run:
     - python >=3.9
-    - dask
+    - dask[complete]
     - jinja2
-    - hipscat >=0.2.4
+    - hipscat >=0.2.6
     - pyarrow
     - deprecated
-    - ipykernel
     - scipy
     - lsst-sphgeom
 
@@ -40,7 +39,7 @@ test:
   requires:
     - pip
     - pytest
-    - pytest-timeout
+    - pytest-mock
   source_files:
     - tests
 
@@ -56,3 +55,4 @@ extra:
     - jeremykubica
     - drewoldag
     - delucchi-cmu
+    - camposandro
