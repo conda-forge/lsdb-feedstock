@@ -16,15 +16,15 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<=3.11.8
+    - python >=3.9
     - setuptools >=62
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.9,<=3.11.8
-    - dask <=2024.2.1
+    - python >=3.9
+    - dask
     - jinja2
-    - hipscat >=0.2.8
+    - hipscat >=0.3
     - pyarrow
     - deprecated
     - scipy
