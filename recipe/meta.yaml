@@ -1,5 +1,5 @@
 {% set name = "lsdb" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: 36bca13c917f1423db6ad81b8de45ac2f47bf5be445597ac1ff14cf96e1ef6d2
+  sha256: 9d2fc005105656928c1ccec62126e1d888717f25136e304dd003d86d27158dbb
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - python >=3.9
     - dask
     - jinja2
-    - hipscat >=0.3.3
+    - hipscat >=0.3.4
     - pyarrow
     - deprecated
     - scipy
