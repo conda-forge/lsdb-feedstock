@@ -24,7 +24,7 @@ requirements:
     - python >=3.9
     - dask
     - jinja2
-    - hipscat >=0.3.3
+    - hipscat >=0.3.4
     - pyarrow
     - deprecated
     - scipy
