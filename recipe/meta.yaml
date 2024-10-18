@@ -23,15 +23,15 @@ requirements:
   run:
     - python >=3.9
     - dask
-    - jinja2
-    - hipscat >=0.3.8
-    - nested-pandas
+    - deprecated
+    - hats >=0.4.1
+    - lsst-sphgeom
     - nested-dask
+    - nested-pandas
     - numpy <2
     - pyarrow
-    - deprecated
     - scipy
-    - lsst-sphgeom
+    - jinja2
 
 test:
   imports:
@@ -54,8 +54,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - mjuric
-    - jeremykubica
-    - drewoldag
-    - delucchi-cmu
     - camposandro
+    - delucchi-cmu
+    - drewoldag
+    - jeremykubica
+    - mjuric
