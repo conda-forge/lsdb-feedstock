@@ -27,7 +27,7 @@ requirements:
     - deprecated
     - hats >=0.4.6
     - lsst-sphgeom
-    - nested-dask >=0.3.0
+    - nested-dask >=0.3.1
     - nested-pandas
     - numpy <2
     - pyarrow
