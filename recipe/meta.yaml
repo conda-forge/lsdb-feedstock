@@ -29,7 +29,7 @@ requirements:
     - lsst-sphgeom
     - nested-dask >=0.3.4
     - nested-pandas >=0.3.8
-    - numpy <3
+    - numpy >=2
     - pyarrow
     - scipy
     - jinja2
