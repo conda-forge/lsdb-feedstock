@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: d14692614e32c14a0cbac84dabf226bae9a5ca5e78a34b8330617a016f2acd28
+  sha256: f8c47ec6cb3ff1c61274cca555dfbcfb8c83076b52c6c1ba7adcb1137dfc8a8c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -50,7 +50,7 @@ test:
 
 about:
   home: https://github.com/astronomy-commons/lsdb
-  summary: 'Large Survey Database (LSDB), an large astronomical catalog analytics tool'
+  summary: 'LSDB, python tool for scalable analysis of large catalogs'
   license: BSD-3-Clause
   license_file: LICENSE
 

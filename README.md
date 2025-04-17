@@ -7,7 +7,7 @@ Home: https://github.com/astronomy-commons/lsdb
 
 Package license: BSD-3-Clause
 
-Summary: Large Survey Database (LSDB), an large astronomical catalog analytics tool
+Summary: LSDB, python tool for scalable analysis of large catalogs
 
 Current build status
 ====================
