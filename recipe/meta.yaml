@@ -23,15 +23,14 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - dask
+    - dask >=2025.3.0
     - deprecated
-    - hats >=0.5.1
+    - hats >=0.5.2
     - lsst-sphgeom
-    - nested-dask >=0.3.4
-    - nested-pandas >=0.3.8
+    - nested-pandas >=0.4.0
     - numpy >=2
-    - pyarrow
-    - scipy
+    - pyarrow >=14.0.1
+    - scipy >=1.7.2
     - jinja2
 
 test:
