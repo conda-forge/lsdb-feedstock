@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "lsdb" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: 6eea9b0f1f871bb5d648c4819eb12668abb3b074363cc6d24feea1e82de703ba
+  sha256: 83da9fa034f6a805212d6912ea0d0af8cb63276b8a4b79926092a94f684b4ea0
 
 build:
   noarch: python
