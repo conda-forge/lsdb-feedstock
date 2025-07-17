@@ -29,7 +29,7 @@ requirements:
     - lsst-sphgeom
     - nested-pandas >=0.4.6,<0.5.0
     - numpy >=2
-    - pyarrow >=14.0.1,!19.0.0
+    - pyarrow >=14.0.1,!=19.0.0
     - scipy >=1.7.2
     - universal-pathlib >=0.2.2
     - jinja2
