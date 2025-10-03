@@ -25,13 +25,13 @@ requirements:
     - python >={{ python_min }}
     - dask >=2025.3.0
     - deprecated
-    - hats >=0.6.5
+    - hats >=0.6.5,<0.7.0
     - lsst-sphgeom
     - nested-pandas >=0.4.6,<0.5.0
     - numpy >=2
     - pyarrow >=14.0.1,!=19.0.0
     - scipy >=1.7.2
-    - universal_pathlib >=0.2.2
+    - universal_pathlib >=0.2.2,<0.3.0
     - jinja2
 
 test:
