@@ -33,6 +33,7 @@ requirements:
     - scipy >=1.7.2
     - universal_pathlib >=0.2.2,<0.3.0
     - jinja2
+    - tabulate >=0.7.0
 
 test:
   imports:
