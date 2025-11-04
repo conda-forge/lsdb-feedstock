@@ -25,7 +25,7 @@ requirements:
     - python >={{ python_min }}
     - dask >=2025.3.0
     - deprecated
-    - hats >=0.6.7,<0.7.0
+    - hats >=0.7,<0.8
     - lsst-sphgeom
     - nested-pandas >=0.4.7,<0.6.0
     - numpy >=2
