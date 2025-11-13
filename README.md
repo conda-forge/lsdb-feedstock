@@ -143,9 +143,15 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@astronomy-commons/lincc-frameworks](https://github.com/orgs/astronomy-commons/teams/lincc-frameworks/)
 * [@camposandro](https://github.com/camposandro/)
 * [@delucchi-cmu](https://github.com/delucchi-cmu/)
+* [@dougbrn](https://github.com/dougbrn/)
 * [@drewoldag](https://github.com/drewoldag/)
+* [@gitosaurus](https://github.com/gitosaurus/)
+* [@hombit](https://github.com/hombit/)
 * [@jeremykubica](https://github.com/jeremykubica/)
 * [@mjuric](https://github.com/mjuric/)
+* [@olivialynn](https://github.com/olivialynn/)
+* [@smcguire-cmu](https://github.com/smcguire-cmu/)
 
