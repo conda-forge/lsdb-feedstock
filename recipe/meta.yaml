@@ -25,15 +25,14 @@ requirements:
     - python >={{ python_min }}
     - dask >=2025.3.0
     - deprecated
-    - hats >=0.7,<0.8
+    - hats >=0.7.1,<0.8
     - lsst-sphgeom
-    - nested-pandas >=0.6,<0.7
-    - numpy >=2
-    - pyarrow >=14.0.1,!=19.0.0
+    - nested-pandas >=0.6.2,<0.7.0
+    - numpy
+    - pyarrow
     - scipy >=1.7.2
-    - universal_pathlib >=0.2.2,<0.3.0
-    - jinja2
     - tabulate >=0.7.0
+    - universal_pathlib
 
 test:
   imports:
