@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lsdb-{{ version }}.tar.gz
-  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  sha256: 0916d664be5d69538cc5811c803e293dd125d3c8cef5020318d20d8462ab42c3
 
 build:
   noarch: python
