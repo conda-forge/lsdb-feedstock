@@ -64,7 +64,7 @@ outputs:
         - hats
       commands:
         - pip check
-        - pytest tests
+        - pytest hats/tests
       requires:
         - pip
         - pytest
@@ -72,7 +72,7 @@ outputs:
         - pytest-timeout
         - python {{ python_min }}
       source_files:
-        - tests
+        - hats/tests
 
   - name: lsdb
 
@@ -105,14 +105,14 @@ outputs:
         - lsdb
       commands:
         - pip check
-        - pytest tests
+        - pytest lsdb/tests
       requires:
         - pip
         - pytest
         - pytest-mock
         - python {{ python_min }}
       source_files:
-        - tests
+        - lsdb/tests
 
   - name: hats-import
 
@@ -146,7 +146,7 @@ outputs:
         - hats_import
       commands:
         - pip check
-        - pytest tests --timeout=0
+        - pytest hats-import/tests --timeout=0
       requires:
         - pip
         - pytest
@@ -154,7 +154,7 @@ outputs:
         - pytest-mock
         - python {{ python_min }}
       source_files:
-        - tests
+        - hats-import/tests
         - pyproject.toml
 
 about:
