@@ -161,7 +161,7 @@ about:
   home: https://github.com/astronomy-commons/lsdb
   summary: 'LSDB, python tool for scalable analysis of large catalogs'
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file: lsdb/LICENSE
 
 extra:
   recipe-maintainers:
