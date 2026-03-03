@@ -22,9 +22,9 @@ build:
 
 requirements:
   host:
-    - python {{ min_python }}
+    - python {{ python_min }}
   run:
-    - python {{ min_python }}
+    - python {{ python_min }}
 
 outputs:
   - name: hats
