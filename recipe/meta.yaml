@@ -5,6 +5,16 @@ package:
   name: lsdb-split
   version: {{ version }}
 
+source:
+  - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
+    sha256: 6c8d466ed5a4342daaf767b6ef79cfb214f304b7068e9c06ab944f6ff8ddf3b2
+    target_directory: hats
+  - url: https://pypi.org/packages/source/h/hats-import/hats-import-{{ version }}.tar.gz
+    sha256: 13e257cc104c426f21d8134999a92d4d95f9f86dbf26f9748db0d7f279927c57
+    target_directory: hats-import
+  - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
+    sha256: 0916d664be5d69538cc5811c803e293dd125d3c8cef5020318d20d8462ab42c3
+    target_directory: lsdb
 
 build:
   noarch: python
@@ -19,13 +29,9 @@ requirements:
 outputs:
   - name: hats
 
-    source:
-      url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
-      sha256: 6c8d466ed5a4342daaf767b6ef79cfb214f304b7068e9c06ab944f6ff8ddf3b2
-
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: cd hats && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       number: 1
 
     requirements:
@@ -68,20 +74,11 @@ outputs:
       source_files:
         - tests
 
-    about:
-      home: https://github.com/astronomy-commons/hats
-      summary: 'A HATS astronomical catalog format reader library'
-      license: BSD-3-Clause
-      license_file: LICENSE
-
   - name: lsdb
-    source:
-      url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
-      sha256: 0916d664be5d69538cc5811c803e293dd125d3c8cef5020318d20d8462ab42c3
 
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: cd lsdb && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       number: 0
 
     requirements:
@@ -117,20 +114,11 @@ outputs:
       source_files:
         - tests
 
-    about:
-      home: https://github.com/astronomy-commons/lsdb
-      summary: 'LSDB, python tool for scalable analysis of large catalogs'
-      license: BSD-3-Clause
-      license_file: LICENSE
-
   - name: hats-import
-    source:
-    url: https://pypi.org/packages/source/h/hats-import/hats-import-{{ version }}.tar.gz
-    sha256: 13e257cc104c426f21d8134999a92d4d95f9f86dbf26f9748db0d7f279927c57
 
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: cd hats-import && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       number: 1
 
     requirements:
@@ -169,11 +157,11 @@ outputs:
         - tests
         - pyproject.toml
 
-    about:
-      home: https://github.com/astronomy-commons/hats-import
-      summary: 'A HATS astronomical catalog import tool'
-      license: BSD-3-Clause
-      license_file: LICENSE
+about:
+  home: https://github.com/astronomy-commons/lsdb
+  summary: 'LSDB, python tool for scalable analysis of large catalogs'
+  license: BSD-3-Clause
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
