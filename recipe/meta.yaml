@@ -8,13 +8,13 @@ package:
 source:
   - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
     sha256: 6c8d466ed5a4342daaf767b6ef79cfb214f304b7068e9c06ab944f6ff8ddf3b2
-    target_directory: hats
+    folder: hats
   - url: https://pypi.org/packages/source/h/hats-import/hats-import-{{ version }}.tar.gz
     sha256: 13e257cc104c426f21d8134999a92d4d95f9f86dbf26f9748db0d7f279927c57
-    target_directory: hats-import
+    folder: hats-import
   - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
     sha256: 0916d664be5d69538cc5811c803e293dd125d3c8cef5020318d20d8462ab42c3
-    target_directory: lsdb
+    folder: lsdb
 
 build:
   noarch: python
