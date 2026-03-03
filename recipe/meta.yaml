@@ -1,58 +1,179 @@
 {% set python_min = "3.11" %}
-{% set name = "lsdb" %}
 {% set version = "0.8.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: lsdb-split
   version: {{ version }}
 
-source:
-  url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: 86643f35e2e147436c834f48a2213163fdc374dcddb10a3a1623dfe4c61be894
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
-    - setuptools >=62
-    - setuptools-scm >=6.2
-    - pip
+    - python {{ min_python }}
   run:
-    - python >={{ python_min }}
-    - dask >=2025.3.0
-    - deprecated
-    - hats >=0.8.1,<0.9
-    - lsst-sphgeom
-    - nested-pandas >=0.6.7,<0.7.0
-    - numpy
-    - pyarrow
-    - scipy >=1.7.2
-    - tabulate >=0.7.0
-    - universal_pathlib
+    - python {{ min_python }}
 
-test:
-  imports:
-    - lsdb
-  commands:
-    - pip check
-    - pytest tests
-  requires:
-    - pip
-    - pytest
-    - pytest-mock
-    - python {{ python_min }}
-  source_files:
-    - tests
+outputs:
+  - name: hats
 
-about:
-  home: https://github.com/astronomy-commons/lsdb
-  summary: 'LSDB, python tool for scalable analysis of large catalogs'
-  license: BSD-3-Clause
-  license_file: LICENSE
+    source:
+      url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
+      sha256: 6c8d466ed5a4342daaf767b6ef79cfb214f304b7068e9c06ab944f6ff8ddf3b2
+
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 1
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - aiohttp >=3.8.0
+        - astropy-base >=6.1.5
+        - cdshealpix >=0.8.0
+        - fsspec >=2023.10.0
+        - jinja2
+        - jproperties >=2.0.0
+        - mocpy >=0.19.0
+        - nested-pandas >=0.6.7,<0.7.0
+        - numba >=0.58
+        - numpy >=2,<3
+        - pandas >=2.0
+        - pyarrow >=14.0.1,!=19.0.0
+        - pydantic >=2.0
+        - scipy >=1.7.2
+        - typing-extensions >=4.3.0
+        - universal_pathlib >=0.3.1
+
+    test:
+      imports:
+        - hats
+      commands:
+        - pip check
+        - pytest tests
+      requires:
+        - pip
+        - pytest
+        - pytest-mock
+        - pytest-timeout
+        - python {{ python_min }}
+      source_files:
+        - tests
+
+    about:
+      home: https://github.com/astronomy-commons/hats
+      summary: 'A HATS astronomical catalog format reader library'
+      license: BSD-3-Clause
+      license_file: LICENSE
+
+  - name: lsdb
+    source:
+      url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
+      sha256: 0916d664be5d69538cc5811c803e293dd125d3c8cef5020318d20d8462ab42c3
+
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 0
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - dask >=2025.3.0
+        - deprecated
+        - hats >=0.8.1,<0.9
+        - lsst-sphgeom
+        - nested-pandas >=0.6.7,<0.7.0
+        - numpy
+        - pyarrow
+        - scipy >=1.7.2
+        - tabulate >=0.7.0
+        - universal_pathlib
+
+    test:
+      imports:
+        - lsdb
+      commands:
+        - pip check
+        - pytest tests
+      requires:
+        - pip
+        - pytest
+        - pytest-mock
+        - python {{ python_min }}
+      source_files:
+        - tests
+
+    about:
+      home: https://github.com/astronomy-commons/lsdb
+      summary: 'LSDB, python tool for scalable analysis of large catalogs'
+      license: BSD-3-Clause
+      license_file: LICENSE
+
+  - name: hats-import
+    source:
+    url: https://pypi.org/packages/source/h/hats-import/hats-import-{{ version }}.tar.gz
+    sha256: 13e257cc104c426f21d8134999a92d4d95f9f86dbf26f9748db0d7f279927c57
+
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 1
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - cloudpickle >=3.0.0
+        - dask-core >=2024.3.0,<2025.4.0
+        - deprecated
+        - distributed
+        - hats >=0.8.0,<0.9
+        - ipykernel
+        - nested-pandas >=0.6.7,<0.7.0
+        - numpy >=2.2.0,<3
+        - pandas >=2.0
+        - tqdm >=4.59.0
+        - universal_pathlib
+
+    test:
+      imports:
+        - hats_import
+      commands:
+        - pip check
+        - pytest tests --timeout=0
+      requires:
+        - pip
+        - pytest
+        - pytest-timeout
+        - pytest-mock
+        - python {{ python_min }}
+      source_files:
+        - tests
+        - pyproject.toml
+
+    about:
+      home: https://github.com/astronomy-commons/hats-import
+      summary: 'A HATS astronomical catalog import tool'
+      license: BSD-3-Clause
+      license_file: LICENSE
 
 extra:
   recipe-maintainers:
