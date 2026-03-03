@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
-    sha256: 6c8d466ed5a4342daaf767b6ef79cfb214f304b7068e9c06ab944f6ff8ddf3b2
+    sha256: 2d1199b522d00c6b38144b0d550180d2ffddc774a2943302f9b4425afdf24a27
     folder: hats
   - url: https://pypi.org/packages/source/h/hats-import/hats-import-{{ version }}.tar.gz
     sha256: 13e257cc104c426f21d8134999a92d4d95f9f86dbf26f9748db0d7f279927c57
