@@ -65,7 +65,7 @@ outputs:
         - hats
       commands:
         - pip check
-        - pytest hats/tests
+        - cd hats && pytest tests
       requires:
         - pip
         - pytest
@@ -106,7 +106,7 @@ outputs:
         - lsdb
       commands:
         - pip check
-        - pytest lsdb/tests
+        - cd lsdb && pytest tests
       requires:
         - pip
         - pytest
@@ -147,7 +147,7 @@ outputs:
         - hats_import
       commands:
         - pip check
-        - pytest hats-import/tests --timeout=0
+        - cd hats-import && pytest tests --timeout=0
       requires:
         - pip
         - pytest
