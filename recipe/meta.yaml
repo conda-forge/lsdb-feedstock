@@ -155,7 +155,7 @@ outputs:
         - python {{ python_min }}
       source_files:
         - hats-import/tests
-        - pyproject.toml
+        - hats-import/pyproject.toml
 
 about:
   home: https://github.com/astronomy-commons/lsdb
