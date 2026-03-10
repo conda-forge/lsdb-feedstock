@@ -27,7 +27,9 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-hats-green.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-lsdb-green.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-hats--import-green.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) |
 
 Installing lsdb
 ===============

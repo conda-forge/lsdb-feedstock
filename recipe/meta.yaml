@@ -1,58 +1,168 @@
 {% set python_min = "3.11" %}
-{% set name = "lsdb" %}
 {% set version = "0.8.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: lsdb-split
   version: {{ version }}
 
 source:
-  url: https://github.com/astronomy-commons/lsdb/archive/v{{ version }}.tar.gz
-  sha256: 994fda14bd641c0c80e9be97c999e887d2d88b0ec66883863e4db8dba69cc27b
+  - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
+    sha256: 2d1199b522d00c6b38144b0d550180d2ffddc774a2943302f9b4425afdf24a27
+    folder: hats
+  - url: https://pypi.org/packages/source/h/hats_import/hats_import-{{ version }}.tar.gz
+    sha256: 152fa3ad23f3148d128520079b5205c2d36853ab95c71c71082607e22e0c52bd
+    folder: hats-import
+  - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
+    sha256: cb5e7bad7388bc9727f31b6e961f1790a60dae7696efafff83c9f76f2b81bfeb
+    folder: lsdb
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=62
-    - setuptools-scm >=6.2
-    - pip
   run:
-    - python >={{ python_min }}
-    - dask >=2025.3.0
-    - deprecated
-    - hats >=0.8.2,<0.9
-    - lsst-sphgeom
-    - nested-pandas >=0.6.7,<0.7.0
-    - numpy
-    - pyarrow
-    - scipy >=1.7.2
-    - tabulate >=0.7.0
-    - universal_pathlib
-
-test:
-  imports:
-    - lsdb
-  commands:
-    - pip check
-    - pytest tests
-  requires:
-    - pip
-    - pytest
-    - pytest-mock
     - python {{ python_min }}
-  source_files:
-    - tests
+
+outputs:
+  - name: hats
+
+    build:
+      noarch: python
+      script: cd hats && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 1
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - aiohttp >=3.8.0
+        - astropy-base >=6.1.5
+        - cdshealpix >=0.8.0
+        - fsspec >=2023.10.0
+        - human-readable
+        - jinja2
+        - jproperties >=2.0.0
+        - mocpy >=0.19.0
+        - nested-pandas >=0.6.7,<0.7.0
+        - numba >=0.58
+        - numpy >=2,<3
+        - pandas >=2.0
+        - pyarrow >=14.0.1,!=19.0.0
+        - pydantic >=2.0
+        - scipy >=1.7.2
+        - typing-extensions >=4.3.0
+        - universal_pathlib >=0.3.1
+
+    test:
+      imports:
+        - hats
+      commands:
+        - pip check
+        - cd hats && pytest tests
+      requires:
+        - pip
+        - pytest
+        - pytest-mock
+        - pytest-timeout
+        - python {{ python_min }}
+      source_files:
+        - hats/tests
+
+  - name: lsdb
+
+    build:
+      noarch: python
+      script: cd lsdb && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 0
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - dask >=2025.3.0
+        - deprecated
+        - hats >=0.8.1,<0.9
+        - lsst-sphgeom
+        - nested-pandas >=0.6.7,<0.7.0
+        - numpy
+        - pyarrow
+        - scipy >=1.7.2
+        - tabulate >=0.7.0
+        - universal_pathlib
+
+    test:
+      imports:
+        - lsdb
+      commands:
+        - pip check
+        - cd lsdb && pytest tests
+      requires:
+        - pip
+        - pytest
+        - pytest-mock
+        - python {{ python_min }}
+      source_files:
+        - lsdb/tests
+
+  - name: hats-import
+
+    build:
+      noarch: python
+      script: cd hats-import && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      number: 1
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools >=62
+        - setuptools-scm >=6.2
+        - pip
+      run:
+        - python >={{ python_min }}
+        - cloudpickle >=3.0.0
+        - dask-core >=2024.3.0,<2025.4.0
+        - deprecated
+        - distributed
+        - hats >=0.8.0,<0.9
+        - ipykernel
+        - nested-pandas >=0.6.7,<0.7.0
+        - numpy >=2.2.0,<3
+        - pandas >=2.0
+        - tqdm >=4.59.0
+        - universal_pathlib
+
+    test:
+      imports:
+        - hats_import
+      commands:
+        - pip check
+        - cd hats-import && pytest tests --timeout=0
+      requires:
+        - pip
+        - pytest
+        - pytest-timeout
+        - pytest-mock
+        - python {{ python_min }}
+      source_files:
+        - hats-import/tests
+        - hats-import/pyproject.toml
 
 about:
   home: https://github.com/astronomy-commons/lsdb
   summary: 'LSDB, python tool for scalable analysis of large catalogs'
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file: lsdb/LICENSE
 
 extra:
   recipe-maintainers:
