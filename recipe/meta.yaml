@@ -92,7 +92,7 @@ outputs:
         - python >={{ python_min }}
         - dask >=2025.3.0
         - deprecated
-        - hats >=0.8.1,<0.9
+        - hats >={{ version }},<0.10
         - lsst-sphgeom
         - nested-pandas >=0.6.7,<0.7.0
         - numpy
@@ -134,7 +134,7 @@ outputs:
         - dask-core >=2024.3.0,<2025.4.0
         - deprecated
         - distributed
-        - hats >=0.8.0,<0.9
+        - hats >={{ version }},<0.10
         - ipykernel
         - nested-pandas >=0.6.7,<0.7.0
         - numpy >=2.2.0,<3
