@@ -1,5 +1,5 @@
 {% set python_min = "3.11" %}
-{% set version = "0.8.2" %}
+{% set version = "0.9.0" %}
 
 package:
   name: lsdb-split
@@ -7,18 +7,18 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
-    sha256: 2d1199b522d00c6b38144b0d550180d2ffddc774a2943302f9b4425afdf24a27
+    sha256: e723ee4f7a0007a13fa758b0ff5cf3235dea8ff385ad1c471a7bf8da311b01fd
     folder: hats
   - url: https://pypi.org/packages/source/h/hats_import/hats_import-{{ version }}.tar.gz
-    sha256: 152fa3ad23f3148d128520079b5205c2d36853ab95c71c71082607e22e0c52bd
+    sha256: f750627c9f631e4f751ac977314c727b7de6b12c4a1e3857680b283790898238
     folder: hats-import
   - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
-    sha256: cb5e7bad7388bc9727f31b6e961f1790a60dae7696efafff83c9f76f2b81bfeb
+    sha256: 6e67cc9fcfd1a7eac7dcb2a9accc98c146d45dbe1dfcd1b8c60679dd66b41711
     folder: lsdb
 
 build:
   noarch: python
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -32,7 +32,7 @@ outputs:
     build:
       noarch: python
       script: cd hats && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-      number: 1
+      number: 0
 
     requirements:
       host:
@@ -120,7 +120,7 @@ outputs:
     build:
       noarch: python
       script: cd hats-import && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-      number: 1
+      number: 0
 
     requirements:
       host:

@@ -1,5 +1,5 @@
-About lsdb-feedstock
-====================
+About lsdb-split-feedstock
+==========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lsdb-feedstock/blob/main/LICENSE.txt)
 
@@ -28,54 +28,54 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-hats-green.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hats.svg)](https://anaconda.org/conda-forge/hats) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-lsdb-green.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-hats--import-green.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hats-import.svg)](https://anaconda.org/conda-forge/hats-import) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lsdb-green.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lsdb.svg)](https://anaconda.org/conda-forge/lsdb) |
 
-Installing lsdb
-===============
+Installing lsdb-split
+=====================
 
-Installing `lsdb` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `lsdb-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `lsdb` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `hats, hats-import, lsdb` can be installed with `conda`:
 
 ```
-conda install lsdb
-```
-
-or with `mamba`:
-
-```
-mamba install lsdb
-```
-
-It is possible to list all of the versions of `lsdb` available on your platform with `conda`:
-
-```
-conda search lsdb --channel conda-forge
+conda install hats hats-import lsdb
 ```
 
 or with `mamba`:
 
 ```
-mamba search lsdb --channel conda-forge
+mamba install hats hats-import lsdb
+```
+
+It is possible to list all of the versions of `hats` available on your platform with `conda`:
+
+```
+conda search hats --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search hats --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search lsdb --channel conda-forge
+mamba repoquery search hats --channel conda-forge
 
-# List packages depending on `lsdb`:
-mamba repoquery whoneeds lsdb --channel conda-forge
+# List packages depending on `hats`:
+mamba repoquery whoneeds hats --channel conda-forge
 
-# List dependencies of `lsdb`:
-mamba repoquery depends lsdb --channel conda-forge
+# List dependencies of `hats`:
+mamba repoquery depends hats --channel conda-forge
 ```
 
 
@@ -120,17 +120,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating lsdb-feedstock
-=======================
+Updating lsdb-split-feedstock
+=============================
 
-If you would like to improve the lsdb recipe or build a new
+If you would like to improve the lsdb-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/lsdb-feedstock are
+Note that all branches in the conda-forge/lsdb-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
@@ -156,7 +156,4 @@ Feedstock Maintainers
 * [@mjuric](https://github.com/mjuric/)
 * [@olivialynn](https://github.com/olivialynn/)
 * [@smcguire-cmu](https://github.com/smcguire-cmu/)
-
-
-<!-- dummy commit to enable rerendering -->
 
