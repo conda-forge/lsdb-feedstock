@@ -65,7 +65,7 @@ outputs:
         - hats
       commands:
         - pip check
-        - cd hats && pytest tests
+        - cd hats && pytest tests --log-cli-level=INFO
       requires:
         - pip
         - pytest
