@@ -10,7 +10,7 @@ source:
     sha256: 23dcf54617ec962ee13298849a1734a42645ba1fb8bf2420200c7082be990d94
     folder: hats
   - url: https://pypi.org/packages/source/h/hats_import/hats_import-{{ version }}.tar.gz
-    sha256: 23dcf54617ec962ee13298849a1734a42645ba1fb8bf2420200c7082be990d94
+    sha256: efbd585076a13fd7a752c6e2359f94addff0674803339acf2f132f4ef553749a
     folder: hats-import
   - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
     sha256: 170100d54cc4c3badd92044235ca4938ececc22a348f376e84c7acbb6503acf8
