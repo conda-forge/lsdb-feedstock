@@ -1,5 +1,5 @@
 {% set python_min = "3.11" %}
-{% set version = "0.10.1" %}
+{% set version = "0.10.2" %}
 
 package:
   name: lsdb-split
@@ -7,13 +7,13 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/hats/hats-{{ version }}.tar.gz
-    sha256: ac93ade4a643fe955d5c43512d2f5d0fb627718b3c9b5a191ddc2cba3a5c038f
+    sha256: 6915c6ec1ab184d11029c3fcf28655b83da65cfdbd6af482ef0416ed753b465a
     folder: hats
   - url: https://pypi.org/packages/source/h/hats_import/hats_import-{{ version }}.tar.gz
-    sha256: 621ecb36ec821dbde16d380ececd7b874b2b864099a60e3a5b019f1eb02cbd83
+    sha256: d55917dbc84793f4be66d4b71a970a1c5a7ef60d747a4b5e9f7967eb99ec6f9b
     folder: hats-import
   - url: https://pypi.org/packages/source/l/lsdb/lsdb-{{ version }}.tar.gz
-    sha256: c27671f22ef33fd0580aa1af59524805cab219d030ed55194bb9c85ab6bcf67b
+    sha256: 5d69dada4b4eabed72422288dc70a0cc549af098e370a5f30c375c957c2e783c
     folder: lsdb
 
 build:
