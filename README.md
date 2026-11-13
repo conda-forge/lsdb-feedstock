@@ -191,6 +191,7 @@ Feedstock Maintainers
 
 * [@astronomy-commons/lincc-frameworks](https://github.com/orgs/astronomy-commons/teams/lincc-frameworks/)
 * [@camposandro](https://github.com/camposandro/)
+* [@csestili](https://github.com/csestili/)
 * [@delucchi-cmu](https://github.com/delucchi-cmu/)
 * [@dougbrn](https://github.com/dougbrn/)
 * [@drewoldag](https://github.com/drewoldag/)
